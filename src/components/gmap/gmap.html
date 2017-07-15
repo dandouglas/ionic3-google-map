@@ -1,0 +1,6 @@
+<div [hidden]="this.showMap" class="no-internet">
+  <ion-icon name="wifi"></ion-icon>
+  <h3>Cannot Connect To Google Maps</h3>
+  <p>Please check your internet connection.</p>
+</div>
+<div #map id="map" [hidden]="!this.showMap"></div>
