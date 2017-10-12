@@ -1,5 +1,5 @@
 # Ionic 3 Google Map
-A google map component for Ionic 2/3 with on-line and off-line connectivity listener
+An example Ionic app containing a google map component with on-line and off-line connectivity listener.  Works for both Ionic 2 and 3.
 
 ## Setup
 Clone the repository, add the geolocation plugin and install the ionic native geolocation and network providers.
