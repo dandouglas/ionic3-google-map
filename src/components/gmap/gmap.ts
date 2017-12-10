@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Network } from "@ionic-native/network";
 import { Geolocation } from '@ionic-native/Geolocation';
+import { Subscription } from 'rxjs/Subscription';
 
 declare var google;
 
@@ -12,15 +13,14 @@ export class Gmap {
 
   @ViewChild('map') mapElement: ElementRef;
 
-  map: any;
-  apiKey: string = 'YOUR_API_KEY_HERE';
-  connectionStatus: string = 'online';
-  connected: any;
-  disconnected: any;
-  showMap: boolean = false;
+  private map: Object;
+  private apiKey: string = 'YOUR_API_KEY_HERE';
+  private connectionStatus: string = networkStatus.online;
+  private connected: Subscription;
+  private disconnected: Subscription;
+  private showMap: boolean = false;
 
-  constructor(private network: Network) {
-  }
+  constructor(private network: Network) { }
 
   ngOnInit() {
     this.connected = this.network.onConnect().subscribe(
@@ -42,7 +42,6 @@ export class Gmap {
   }
 
   ngOnDestroy() {
-    console.debug('View destroyed');
     this.connected.unsubscribe();
     this.disconnected.unsubscribe();
   }
@@ -52,7 +51,7 @@ export class Gmap {
 
       this.showMap = false;
 
-      if (this.connectionStatus === 'online') {
+      if (this.connectionStatus === networkStatus.online) {
 
         //Load the Google Maps SDK
         window['mapInit'] = () => {
@@ -60,7 +59,7 @@ export class Gmap {
           this.showMap = true;
         }
 
-        let script = document.createElement('script');
+        const script = document.createElement('script');
         script.id = 'googleMaps';
         script.src = this.apiKey ? `https://maps.googleapis.com/maps/api/js?key=${this.apiKey}&libraries=places&callback=mapInit` : 'https://maps.googleapis.com/maps/api/js?callback=mapInit';
         document.body.appendChild(script);
@@ -68,7 +67,7 @@ export class Gmap {
       }
     }
     else {
-      if (this.connectionStatus === 'online') {
+      if (this.connectionStatus === networkStatus.online) {
         this.initMap();
         this.showMap = true;
       }
@@ -81,8 +80,8 @@ export class Gmap {
   initMap() {
     Geolocation.prototype.getCurrentPosition().then(
       (position) => {
-        let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        let mapOptions = {
+        const latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        const mapOptions = {
           center: latLng,
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -93,5 +92,8 @@ export class Gmap {
         console.error('Geolocation error, %o', error);
       });
   }
+}
 
+const networkStatus = {
+  online: 'online'
 }
