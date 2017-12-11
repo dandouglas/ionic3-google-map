@@ -1,6 +1,6 @@
  #map {
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 
 .no-internet {
@@ -8,8 +8,8 @@
     margin: 0 auto;
     margin-top: 5vh;
     text-align: center;
-    ion-icon {
-        font-size: 20vw;
+    img {
+        max-width: 50vw;
     }
 }
 
