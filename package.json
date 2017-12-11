@@ -1,9 +1,9 @@
 {
-  "name": "ionic-hello-world",
-  "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
-  "private": true,
+  "name": "gmap",
+  "version": "1.0.0",
+  "author": "Daniel Douglas",
+  "homepage": "https://github.com/dandouglas/ionic3-google-map",
+  "private": false,
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "@angular/common": "4.1.3",
-    "@angular/compiler": "4.1.3",
-    "@angular/compiler-cli": "4.1.3",
     "@angular/core": "4.1.3",
     "@angular/forms": "4.1.3",
     "@angular/http": "4.1.3",
@@ -33,8 +31,12 @@
     "zone.js": "0.8.12"
   },
   "devDependencies": {
+    "@angular/compiler": "^4.1.3",
+    "@angular/compiler-cli": "^4.1.3",
     "@ionic/app-scripts": "2.0.2",
-    "typescript": "2.3.4"
+    "rollup": "^0.52.1",
+    "typescript": "^2.3.4",
+    "uglify-js": "^3.2.2"
   },
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
@@ -52,5 +54,5 @@
       "locator": "ios"
     }
   ],
-  "description": "google-map-template: An Ionic project"
+  "description": "An ionic google map component with online and offline capabilities."
 }
