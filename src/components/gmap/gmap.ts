@@ -18,7 +18,7 @@ export class Gmap {
   private connectionStatus: string = networkStatus.online;
   private connected: Subscription;
   private disconnected: Subscription;
-  private showMap: boolean = false;
+  showMap: boolean = false;
 
   constructor(private network: Network) { }
 

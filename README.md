@@ -11,7 +11,7 @@ $ cd ionic3-google-map
 
 $ npm install
 
-$ ionic plugin add cordova-plugin-geolocation
+$ ionic cordova plugin add cordova-plugin-geolocation
 
 $ npm install --save @ionic-native/geolocation
 
@@ -22,3 +22,7 @@ Update gmap.ts with your google map api key.
 ```
  apiKey: string = 'YOUR_API_KEY_HERE';
  ```
+
+Run the app
+
+$ ionic serve
