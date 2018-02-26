@@ -7,6 +7,10 @@ Clone the repository, add the geolocation plugin and install the ionic native ge
 ``` shell
 $ git clone 'https://github.com/dandouglas/ionic3-google-map.git'
 
+$ cd ionic3-google-map
+
+$ npm install
+
 $ ionic plugin add cordova-plugin-geolocation
 
 $ npm install --save @ionic-native/geolocation
