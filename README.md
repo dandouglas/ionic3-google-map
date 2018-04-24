@@ -18,7 +18,7 @@ Update gmap.ts with your google map api key.
  apiKey: string = 'YOUR_API_KEY_HERE';
  ```
 
-Run the app
+Try the app in the browser
 ``` shell
 $ ionic serve
 ```
