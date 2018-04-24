@@ -2,7 +2,7 @@
 An example Ionic app containing a google map component with on-line and off-line connectivity listener.  Works for both Ionic 2 and 3.
 
 ## Setup
-Clone the repository, run `npm install` to setup the dependencies and add the geolocation plugin.
+Clone the repository and run `npm install` to setup the dependencies.
 
 ``` shell
 $ git clone 'https://github.com/dandouglas/ionic3-google-map.git'
